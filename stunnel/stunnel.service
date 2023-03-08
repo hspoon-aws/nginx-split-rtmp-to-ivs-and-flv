@@ -1,0 +1,19 @@
+/usr/bin/stunnel
+[ec2-user@ip-172-31-27-36 default]$ cat /lib/systemd/system/stunnel.service
+[Unit]
+Description=SSL tunnel for network daemons
+Documentation=man:stunnel https://www.stunnel.org/docs.html
+DefaultDependencies=no
+After=network.target
+After=syslog.target
+
+[Install]
+WantedBy=multi-user.target
+Alias=stunnel.target
+
+[Service]
+Type=forking
+EnvironmentFile=-/etc/stunnel/stunnel.conf
+ExecStart=/usr/bin/stunnel /etc/stunnel/stunnel.conf
+ExecStop=/usr/bin/killall -9 stunnel
+RemainAfterExit=yes

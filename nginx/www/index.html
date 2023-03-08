@@ -1,0 +1,29 @@
+<script src="flv.js"></script>
+<h1>FLV player demo</h1>
+<h2> 540p </h2>
+<video id="videoElement_540p"></video>
+<h2> 810p </h2>
+<video id="videoElement_810p"></video>
+<script>
+    if (flvjs.isSupported()) {
+        var videoElement_540p = document.getElementById('videoElement_540p');
+        var flvPlayer_540p = flvjs.createPlayer({
+            type: 'flv',
+            "isLive": true,
+            url: '/live?port=1935&app=transcode&stream=123456_540p'
+        });
+        flvPlayer_540p.attachMediaElement(videoElement_540p);
+        flvPlayer_540p.load();
+        flvPlayer_540p.play();
+
+        var videoElement_810p = document.getElementById('videoElement_810p');
+        var flvPlayer_810p = flvjs.createPlayer({
+            type: 'flv',
+            "isLive": true,
+            url: '/live?port=1935&app=transcode&stream=123456_810p'
+        });
+        flvPlayer_810p.attachMediaElement(videoElement_810p);
+        flvPlayer_810p.load();
+        flvPlayer_810p.play();
+    }
+</script>
