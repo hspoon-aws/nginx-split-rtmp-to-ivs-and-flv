@@ -3,7 +3,7 @@
 # install
 yum install -y git
 yum  groupinstall -y "Development Tools" 
-yum install pcre-devel openssl openssl-devel
+yum install -y pcre-devel openssl openssl-devel
 yum install -y ca-certificates openssl openssl-devel stunnel gettext  
 
 # Nginx
