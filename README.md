@@ -28,3 +28,9 @@ A demo showing how to use nginx + nginx-http-flv-module + stunnel to split a RTM
     - `/live?port=1935&app=transcode&stream=123456_540p`
     - `/live?port=1935&app=transcode&stream=123456_810p`
     
+
+## Dependency:
+- https://github.com/winshining/nginx-http-flv-module.git
+- http://nginx.org/download/nginx-1.22.1.tar.gz
+- https://runmedia.s3.ap-southeast-1.amazonaws.com/temp/ffmpeg
+- stunnel
