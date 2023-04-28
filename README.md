@@ -30,7 +30,7 @@ A demo showing how to use nginx + nginx-http-flv-module + stunnel to split a RTM
 
 ## Start/Stop Stream
 The command to stop the stream is:
-curl http://<IP>/control/drop/publisher?app=appname&name=streamname;
+curl http://{IP}/control/drop/publisher?app=appname&name=streamname;
 or run curl locally at the same EC2:  curl http://localhost/control/drop/publisher?app=ivs&name=123456
  
 This command will stop publishing the stream. However, if you keep rtmp ingesting, Nginx will reconnect the ingest and publish again after several seconds. So we need loop stopping the publishing with the continuous ingest by running the following bash:

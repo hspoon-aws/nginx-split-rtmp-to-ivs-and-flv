@@ -1,4 +1,4 @@
 while True; do
-    curl http://localhost/control/drop/publisher?app=<appname>&name=<streamname>;
+    curl http://localhost/control/drop/publisher?app={appname}&name={streamname};
     sleep 3; 
 done
