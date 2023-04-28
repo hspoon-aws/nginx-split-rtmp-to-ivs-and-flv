@@ -34,11 +34,13 @@ curl http://{IP}/control/drop/publisher?app=appname&name=streamname;
 or run curl locally at the same EC2:  curl http://localhost/control/drop/publisher?app=ivs&name=123456
  
 This command will stop publishing the stream. However, if you keep rtmp ingesting, Nginx will reconnect the ingest and publish again after several seconds. So we need loop stopping the publishing with the continuous ingest by running the following bash:
- 
+
+``` 
 while True; do
-curl http://localhost/control/drop/publisher?app=appname&name=streamname;
-sleep 3; need short enough to avoid reconnecting
+    curl http://localhost/control/drop/publisher?app=appname&name=streamname;
+    sleep 3; #need short enough to avoid reconnecting
 done
+```
  
 The output can be resumed (start stream again) by exiting the loop above.
     
