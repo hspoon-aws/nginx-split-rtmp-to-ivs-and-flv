@@ -26,8 +26,9 @@ ln -s /usr/local/nginx/sbin/nginx /usr/local/sbin/nginx
 
 # get ffmpeg
 curl https://runmedia.s3.ap-southeast-1.amazonaws.com/temp/ffmpeg --output /usr/local/nginx/sbin/ffmpeg
-chmod +x /usr/local/sbin/ffmpeg
+chmod 777 /usr/local/sbin/ffmpeg
 ln -s /usr/local/nginx/sbin/ffmpeg /usr/local/sbin/ffmpeg
+chmod 777 /usr/local/nginx/sbin/ffmpeg
 cd ..
 
 ## enable nginx service
